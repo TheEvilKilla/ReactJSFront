@@ -1,18 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-//import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import PostPet from "./components/PostPet/PostPet";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-
 import PostProfile from "./components/PostProfile/PostProfile";
 import Button from "react-bootstrap/Button";
-
 import Col from 'react-bootstrap/Col';
+import EventCard from './components/EventList/event-list';
+import img from './components/assets/gato.png'
 
 
 
@@ -39,12 +38,22 @@ root.render(
       </Row>
     </Container>
     <Container className="mt-0" >
-    <Row>
-      <button className="button" >AGREGAR MASCOTA</button>
+      <Row>
+        <button className="button" >AGREGAR MASCOTA</button>
       </Row>
     </Container>
+    <Container>
+      <h1 className='close-events'>
+        Top eventos cercanos a tí
+      </h1>
+      <EventCard image={img} name='Evento 1' city='Bogota' date='16 de octubre' description='Lorem ipsum dolor sit amet, 
+      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '></EventCard>
+      <EventCard image={img} name='Evento 2' city='Bogota' date='17 de octubre' description='Lorem ipsum dolor sit amet, 
+      consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '></EventCard>
+    </Container>
   </Container >
-
 );
 
 
