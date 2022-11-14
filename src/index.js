@@ -12,11 +12,10 @@ import Button from "react-bootstrap/Button";
 import Col from 'react-bootstrap/Col';
 import EventCard from './components/EventList/event-list';
 import img from './components/assets/gato.png'
-
-
+import EstablishmentCard from "./components/EstablishmentCard/EstablishmentCard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
+ 
 root.render(
   <Container className="mt-3" >
     <Row>
@@ -53,9 +52,14 @@ root.render(
       consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
       nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '></EventCard>
     </Container>
+    <Container></Container>
   </Container >
 );
 
+//Se comenta porque no funciona.
+/*root.render(
+    <EstablishmentCard name="La perrera" address="Calle 44d" type="Restaurante" city="Bogota" image="https://th.bing.com/th/id/OIP.CyLB5L3r3QlAls4bDpbcCgHaE9?pid=ImgDet&rs=1"/>
+);*/
 
 
 // If you want your app to work offline and load faster, you can change
