@@ -1,5 +1,5 @@
 import "./PostProfile"
-import perfil from "../assets/perfil.png"
+import perfil from "../../assets/perfil.png"
 
 
 function PostProfile(props) {

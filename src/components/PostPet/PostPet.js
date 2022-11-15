@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import './PostPet.css'
-import dog from "../assets/perro.jpg"
+import dog from "../../assets/perro.jpg"
 
 
 function PostPet(props) {

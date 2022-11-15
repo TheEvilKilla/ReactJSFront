@@ -1,64 +1,37 @@
-import React from "react";
-import * as Element from "react-bootstrap";
-import { alignPropType } from "react-bootstrap/esm/types";
+import React, { useEffect, useState } from 'react';
+import * as Element from 'react-bootstrap';
+import EventCard from './EventCard/event-card';
+import img from '../../assets/gato.png'
 import './event-list.css';
 
-function EventCard(props) {
+function EventList() {
+    const eventos = [{
+        image: img, name: 'Evento 1', city: 'Bogota', date: '15 de octubre', description: `Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` },
+    {
+        image: img, name: 'Evento 2', city: 'Bogota', date: '16 de octubre', description: `Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` },
+    {
+        image: img, name: 'Evento 3', city: 'Bogota', date: '16 de octubre', description: `Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` },
+    {
+        image: img, name: 'Evento 4', city: 'Bogota', date: '16 de octubre', description: `Lorem ipsum dolor sit amet, 
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` },
+    ];
+
     return (
-        <div className='event-card'>
-            <Element.Col style={{
-                paddingTop: '46px'
-            }}>
-                <Element.Card style={{
-                    width: '100%',
-                    borderRadius: '24px',
-                    height: '300px',
-                    verticalAlign: 'center',
-                    backgroundColor: 'rgba(255,255,255, 0.25)',
-                    backdropFilter: 'blur(20px)',
-                    border: '4px solid #fff'
-                }}>
-                    <Element.Card.Body style={{
-                        display: 'flex',     
-                    }}>
-                        <Element.Row>
-                            <Element.Col style={{
-                                display: 'flex',
-                                maxWidth: '252px',
-                                maxHeight: '252px',
-                                alignContent: 'center'
-                            }}>
-                                <img src={props.image} style={{
-                                    borderRadius: '20%',
-                                    maxWidth: '252px',
-                                    maxHeight: '252px'
-                                }} />
-                            </Element.Col>
-                            <Element.Col style={{
-                                paddingLeft: '45px'
-                            }}>
-                                <Element.Row>
-                                    <Element.Card.Title style={{
-                                        fontSize: '24px'
-                                    }}>{props.name}</Element.Card.Title>
-                                    <Element.Card.Subtitle style={{
-                                        fontSize: '16px'
-                                    }}>{props.city}</Element.Card.Subtitle>
-                                    <Element.Card.Text style={{
-                                        fontSize: '15px'
-                                    }}>{props.date}</Element.Card.Text>
-                                </Element.Row>
-                                <br></br>
-                                <Element.Row>
-                                    <Element.Card.Text style={{
-                                        fontSize: '20px'
-                                    }}>{props.description}</Element.Card.Text>
-                                </Element.Row>
-                            </Element.Col>
-                        </Element.Row>
-                    </Element.Card.Body>
-                </Element.Card>
+        <div className='event-card-list'>
+            <Element.Col>
+                {eventos.map(elem => {
+                    <Element.Row>
+                        <EventCard image={elem.image} name={elem.name} city={elem.city} date={elem.date} description={elem.description}></EventCard>
+                    </Element.Row>
+                })}
             </Element.Col>
         </div>
     );
-} export default EventCard;
+} export default EventList;

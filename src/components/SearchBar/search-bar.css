@@ -1,0 +1,7 @@
+.results::-webkit-scrollbar {
+    display: none;
+}
+
+.search-bar-item:hover {
+    background-color: lightgray;
+}
