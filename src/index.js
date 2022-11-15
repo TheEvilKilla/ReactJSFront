@@ -12,6 +12,9 @@ import Button from "react-bootstrap/Button";
 import Col from 'react-bootstrap/Col';
 import EventCard from './components/EventList/event-list';
 import img from './components/assets/gato.png'
+import fotoPerfil from './components/assets/usuario1.jpeg'
+import fotoPerfil2 from './components/assets/perro.jpg'
+import ReviewCard from './components/ReviewList/review-list';
 import EstablishmentCard from "./components/EstablishmentCard/EstablishmentCard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -51,6 +54,15 @@ root.render(
       <EventCard image={img} name='Evento 2' city='Bogota' date='17 de octubre' description='Lorem ipsum dolor sit amet, 
       consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
       nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. '></EventCard>
+    </Container>
+
+    <Container>
+      <h1 className='reviews'>
+        Reseñas
+      </h1>
+      <ReviewCard image={fotoPerfil}  userName='Caroline' rating='calificacion: 4/5' date='17 de octubre' description='Gran lugar para pasar un rato, 
+      sin duda una experiencia maravillosa para pasar junto a tu mascota '></ReviewCard>
+      <ReviewCard image={fotoPerfil2}  userName='Caroline' rating='calificacion: 5/5' date='23 de diciembre' description='Impecable atencion y servicio.'></ReviewCard>
     </Container>
     <Container></Container>
   </Container >
