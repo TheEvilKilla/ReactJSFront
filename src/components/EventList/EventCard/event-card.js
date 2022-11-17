@@ -2,12 +2,12 @@ import React from "react";
 import * as Element from "react-bootstrap";
 import './event-card.css';
 
-function EventCard({image, name, city, date, description}) {
+function EventCard({ image, name, city, date, description }) {
     return (
-        <div className='event-card' style={{
+        <div className='event-card-container' style={{
             paddingTop: '46px'
         }}>
-            <Element.Card style={{
+            <Element.Card className='event-card' style={{
                 width: '100%',
                 borderRadius: '24px',
                 height: '300px',
@@ -16,7 +16,7 @@ function EventCard({image, name, city, date, description}) {
                 backdropFilter: 'blur(20px)',
                 border: '4px solid #fff'
             }}>
-                <Element.Card.Body style={{
+                <Element.Card.Body className="event-card-body" style={{
                     display: 'flex',
                 }}>
                     <Element.Row>
@@ -24,31 +24,30 @@ function EventCard({image, name, city, date, description}) {
                             display: 'flex',
                             maxWidth: '252px',
                             maxHeight: '252px',
-                            alignContent: 'center'
                         }}>
-                            <img src={image} style={{
+                            <img className="event-card-image" src={image} style={{
                                 borderRadius: '20%',
                                 maxWidth: '252px',
-                                maxHeight: '252px'
+                                maxHeight: '252px',
                             }} />
                         </Element.Col>
-                        <Element.Col style={{
+                        <Element.Col className="event-card-text-content" style={{
                             paddingLeft: '45px'
                         }}>
                             <Element.Row>
-                                <Element.Card.Title style={{
+                                <Element.Card.Title className="event-card-title" style={{
                                     fontSize: '24px'
                                 }}>{name}</Element.Card.Title>
-                                <Element.Card.Subtitle style={{
+                                <Element.Card.Subtitle className="event-card-city" style={{
                                     fontSize: '16px'
                                 }}>{city}</Element.Card.Subtitle>
-                                <Element.Card.Text style={{
+                                <Element.Card.Text className="event-card-date" style={{
                                     fontSize: '15px'
                                 }}>{date}</Element.Card.Text>
                             </Element.Row>
                             <br></br>
-                            <Element.Row>
-                                <Element.Card.Text style={{
+                            <Element.Row className="event-card-description-container" >
+                                <Element.Card.Text className="event-card-description" style={{
                                     fontSize: '20px'
                                 }}>{description}</Element.Card.Text>
                             </Element.Row>
