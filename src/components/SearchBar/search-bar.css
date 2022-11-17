@@ -5,3 +5,8 @@
 .search-bar-item:hover {
     background-color: lightgray;
 }
+
+.search-bar-button-image:hover {
+    -webkit-filter: drop-shadow(0.5px 0.5px 0.5px black);
+    filter: drop-shadow(0.5px 0.5px 0.5px black);
+}

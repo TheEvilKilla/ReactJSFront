@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import * as Element from 'react-bootstrap';
-import close from '../../assets/close.png';
+import closeIcon from '../../assets/close.png';
+import searchIcon from '../../assets/magnifying-glass.png';
 import './search-bar.css';
 
-function SearchBar({ placeholder, icon, data }) {
+function SearchBar({ placeholder, data }) {
     const [filteredData, setFilteredData] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
@@ -24,34 +25,39 @@ function SearchBar({ placeholder, icon, data }) {
     }
 
     return (
-        <div className='search-bar'>
-            <div>
-                <Element.InputGroup hasValidation='false' style={{
-                    border: '2px solid #000000',
-                    borderRadius: '50px'
-                }}>
-                    <Element.Form.Control className='search-bar-input' type='text' value={inputValue} placeholder={placeholder} onChange={filter} style={{
-                        borderColor: 'rgba(0,0,0,0)',
-                        backgroundColor: 'rgba(0,0,0,0)',
-                    }} />
-                    <Element.Button className='search-bar-button' style={{
-                        border: 'none',
-                        borderColor: 'rgba(0,0,0,1)',
-                        backgroundColor: 'rgba(0,0,0,0)',
-                    }}>{
-                            filteredData.length !== 0 || inputValue.length !== 0 ?
-                                <img src={close} onClick={clearInput} style={{
-                                    maxHeight: '26px',
-                                    maxWidth: '26px',
-                                }} /> :
-                                <img src={icon} style={{
-                                    maxHeight: '26px',
-                                    maxWidth: '26px',
-                                }} />
-                        }
-                    </Element.Button>
-                </Element.InputGroup>
-            </div>
+        <div className='search-bar' style={{
+            paddingTop: '45px',
+            paddingBottom: '45px',
+            paddingLeft: '0',
+            paddingRight: '0'
+        }}>
+            <Element.InputGroup className='search-bar-input-group' hasValidation='false' style={{
+                border: '2px solid #000000',
+                borderRadius: '50px',
+            }}>
+                <Element.Form.Control className='search-bar-input' type='text' value={inputValue} placeholder={placeholder} onChange={filter} style={{
+                    borderColor: 'rgba(0,0,0,0)',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                }} />
+                <Element.Button className='search-bar-button' style={{
+                    display: 'flex',
+                    border: 'none',
+                    borderColor: 'rgba(0,0,0,1)',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    alignItems: 'center'
+                }}>{
+                        filteredData.length !== 0 || inputValue.length !== 0 ?
+                            <img className='search-bar-button-image' src={closeIcon} onClick={clearInput} style={{
+                                maxHeight: '20px',
+                                maxWidth: '20px',
+                            }} /> :
+                            <img className='search-bar-button-image' src={searchIcon} style={{
+                                maxHeight: '26px',
+                                maxWidth: '26px',
+                            }} />
+                    }
+                </Element.Button>
+            </Element.InputGroup>
             {filteredData != 0 && (
                 <div className='results' style={{
                     marginTop: '5px',
@@ -68,7 +74,8 @@ function SearchBar({ placeholder, icon, data }) {
                                 display: 'flex'
                             }}>
                                 <p style={{
-                                    marginLeft: '14px'
+                                    marginLeft: '14px',
+                                    marginTop: '14px'
                                 }}>{k.name}</p>
                             </a>
                         })

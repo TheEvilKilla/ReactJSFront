@@ -1,6 +1,6 @@
-import React from "react";
-import * as Element from "react-bootstrap";
-import NavButton from "./NavButton/nav-button";
+import React from 'react';
+import * as Element from 'react-bootstrap';
+import NavButton from './NavButton/nav-button';
 import restaurant from '../../assets/restaurant.svg';
 import hotel from '../../assets/hotel.svg';
 import vet from '../../assets/vet.svg';
@@ -15,9 +15,9 @@ function NavBar() {
 
     return (
         <div className='nav-bar'>
-            <Element.Row className="nav-bar-row">
+            <Element.Row className='nav-bar-row'>
                 {buttonsContent.map(btn => (
-                    <Element.Col className="nav-bar-element">
+                    <Element.Col className='nav-bar-element'>
                         <NavButton text={btn.text} icon={btn.icon} />
                     </Element.Col>
                 ))}

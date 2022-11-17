@@ -1,0 +1,4 @@
+//https://stackoverflow.com/questions/69639680/remove-dropdown-arrow-in-react-bootstrap
+.dropdown-toggle::after{
+    display: none;
+}
