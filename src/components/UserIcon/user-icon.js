@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import * as Element from "react-bootstrap";
 import './user-icon.scss';
 

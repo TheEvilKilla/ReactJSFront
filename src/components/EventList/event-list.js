@@ -5,25 +5,24 @@ import img from '../../assets/gato.png'
 import './event-list.css';
 
 function EventList() {
-    const eventos= [{ image: img, name: 'Evento 1', city: 'Bogota', date: '15 de octubre', description: `Lorem ipsum dolor sit amet, 
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` },
-    { image: img, name: 'Evento 2', city: 'Medellin', date: '16 de octubre', description: `Lorem ipsum dolor sit amet, 
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` },
-    { image: img, name: 'Evento 3', city: 'Cali', date: '17 de octubre', description: `Lorem ipsum dolor sit amet, 
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.` }];
-
+    const [events, setEvents] = useState([]);
+    useEffect(() => {
+        const URL =
+            "http://localhost:3000/api/v1/events";
+        fetch(URL)
+            .then((data) => data.json())
+            .then((data) => {
+                setEvents(data);
+            });
+    }, []);
     return (
         <div className='event-card-list'>
             <Element.Col>
-                {eventos.slice(0, 5).map(elem => {
+                {events.slice(0, 5).map(elem => {
                     return (
                     <Element.Row>
                         <EventCard image={elem.image} name={elem.name} city={elem.city} date={elem.date} description={elem.description}></EventCard>
                     </Element.Row>)
-
                 })}
             </Element.Col>
         </div>

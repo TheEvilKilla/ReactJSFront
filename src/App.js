@@ -15,7 +15,7 @@ import './index.css';
 function App() {
   return (
     <Element.Container className='main-container' >
-      <Header data={data} userIcon={gato}></Header>
+      <Header data={data}></Header>
       <img src={logo} />
       <Element.Container className='close-events-container'>
         <h1 className='close-events-text' style={{

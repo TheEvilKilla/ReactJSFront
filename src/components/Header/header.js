@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import * as Element from "react-bootstrap";
 import SearchBar from '../SearchBar/search-bar';
 import UserIcon from '../UserIcon/user-icon';
 import NavBar from '../NavBar/nav-bar';
 import './header.scss';
 
-function Header({ data, userIcon }) {
+function Header({ data }) {
+    const [user, setUser] = useState({});
+    useEffect(() => {
+        const URL =
+            "http://localhost:3000/api/v1/users/486ef9d5-315c-4fb4-95c8-9e9ae46208ba";
+        fetch(URL)
+            .then(data => data.json())
+            .then(data => {
+                setUser(data);
+            });
+    }, []);
+
+    //Trae la data de los establecimientos. No existe el api
+    /*const [establishments, setEstablishments] = useState([]);
+    useEffect(() => {
+        const URL =
+            "http://localhost:3000/api/v1/users/486ef9d5-315c-4fb4-95c8-9e9ae46208ba";
+        fetch(URL)
+            .then(data => data.json())
+            .then(data => {
+                setEstablishments(data);
+            });
+    }, []);*/
+
     return (
         <div className="header-container">
             <div className='search-bar-container' style={{
@@ -22,7 +45,7 @@ function Header({ data, userIcon }) {
                 <div style={{
                     width: '58px',
                 }}>
-                    <UserIcon image={userIcon} />
+                    <UserIcon image={user.image} />
                 </div>
             </div>
             <NavBar></NavBar>
