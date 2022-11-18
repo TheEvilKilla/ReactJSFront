@@ -1,0 +1,64 @@
+.QuestionsList {
+    background-color: #F3DBD6;
+    display: block;
+    overflow-y: visible;
+    min-height: 500px;
+    height: auto;
+  }
+
+
+.cardQ{
+  width: 100%;
+  border-radius: 24px;
+  height: auto;
+  vertical-align: center;
+  background-color: rgba(255,255,255, 0.25);
+  backdrop-filter: blur(20px);
+  border: 1px solid #fff
+}
+
+.acord{
+  width: 15%;
+  font-size: 15px;
+  color: black;
+  transition: all .5s;
+  background-color: rgba(255, 169, 169, 0); 
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F36452'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.responder{
+
+  width: 100%;
+  border-radius: 24px;
+  height: auto;
+  vertical-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgb(0, 0, 0)
+}
+
+.btn-publ{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  padding: 10px;
+  gap: 10px;
+  
+  background: #F36452;
+  box-shadow: -4px 4px 14px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+}
+
+.div-1{
+  padding-top: 5px;
+  display: flex;
+  width : 95%;
+  justify-content: right;
+  align-items: right;
+}
