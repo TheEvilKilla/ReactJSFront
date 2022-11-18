@@ -3,14 +3,13 @@ import React from 'react';
 import * as Element from 'react-bootstrap';
 import logo from './assets/Logo.svg';
 import gato from './assets/gato.png'
-import EventList from './components/EventList/event-list';
-import NavBar from './components/NavBar/nav-bar';
 import Header from './components/Header/header';
-import PostPet from './components/PostPet/PostPet';
-import PostProfile from './components/PostProfile/PostProfile';
-
 import data from './MOCK_DATA.json';
 import './App.css';
+import EventList from './components/EventList/event-list';
+import PostPet from "./components/PostPet/PostPet";
+import PostProfile from "./components/PostProfile/PostProfile";
+import './index.css';
 
 function App() {
   return (
