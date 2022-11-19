@@ -9,7 +9,7 @@ function Header({ data }) {
     const [user, setUser] = useState({});
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/486ef9d5-315c-4fb4-95c8-9e9ae46208ba";
+            "http://localhost:3000/api/v1/users/59afae09-6c26-41ee-8bf0-086f9b659717";
         fetch(URL)
             .then(data => data.json())
             .then(data => {

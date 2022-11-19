@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import * as Element from 'react-bootstrap';
 import logo from './assets/Logo.svg';
 import gato from './assets/gato.png'
@@ -11,53 +12,17 @@ import PostPet from "./components/PostPet/PostPet";
 import PostProfile from "./components/PostProfile/PostProfile";
 import QuestionsList from './components/QuestionsList/QuestionsList';
 import './index.css';
+import FrontPage from './components/FrontPage/front-page';
 
 function App() {
   return (
     <Element.Container className='main-container' >
-      <Header data={data}></Header>
-      <img src={logo} />
-      <Element.Container className='close-events-container'>
-        <h1 className='close-events-text' style={{
-          paddingTop: '50px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          Top eventos cercanos a tí
-        </h1>
-        <EventList></EventList>
-      </Element.Container>
-      <Element.Container className="mt-3">
-      <h1 className='my-questions'>
-        Mis preguntas:
-      </h1>
-      <QuestionsList user = 'Usuario X' date = '3 de marzo' content='¿Lorem ipsum dolor sit amet,  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-       quis  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ?' placeholder = 'Responder'></QuestionsList>
-    </Element.Container>
-      {/*<Element.Row>
-        <PostProfile name='Isabela Ortiz' login='i.ortizj' city='Bogota' />
-      </Element.Row>
-      <Element.Container className='mt-2' >
-        <Element.Row>
-          <h2> Mis mascotas</h2>
-        </Element.Row>
-      </Element.Container>
-      <Element.Container className='mt-1' >
-        <Element.Row className='row-1'>
-          <Element.Col className='col-pet'>
-            <PostPet name='Juana' species='Perro' image='./assets/perro.jpg' />
-          </Element.Col>
-          <Element.Col className='col-pet'>
-            <PostPet name='Toto' species='Gato' image='./assets/gato.png' />
-          </Element.Col>
-        </Element.Row>
-      </Element.Container>
-      <Element.Container className='mt-0' >
-        <Element.Row>
-          <button className='button' >AGREGAR MASCOTA</button>
-        </Element.Row>
-      </Element.Container>*/}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<FrontPage/>} />
+          <Route path="/mascotas" element={<PostPet />} />
+        </Routes>
+      </BrowserRouter>
     </Element.Container >
   );
 
