@@ -8,6 +8,7 @@ import Header from '../Header/header';
 import PostPet from "../PostPet/PostPet";
 import QuestionsList from '../QuestionsList/QuestionsList';
 import data from '../../MOCK_DATA.json';
+import UserIcon from '../UserIcon/user-icon';
 
 function FrontPage() {
   return (
