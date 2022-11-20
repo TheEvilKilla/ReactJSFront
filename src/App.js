@@ -21,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<FrontPage/>} />
           <Route path="/mascotas" element={<PostPet />} />
+          <Route path="/users/" element={<PostProfile/>} />
         </Routes>
       </BrowserRouter>
     </Element.Container >
