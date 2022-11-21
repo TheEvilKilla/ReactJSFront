@@ -3,6 +3,9 @@ import perfil from "../../assets/perfil.png"
 import React, { useEffect, useState } from 'react';
 import * as Element from 'react-bootstrap';
 import PostPet from "../PostPet/PostPet";
+import Header from '../Header/header';
+import data from '../../MOCK_DATA.json';
+
 
 function PostProfile() {
     const [profile, setProfiles] = useState([]);
@@ -17,6 +20,7 @@ function PostProfile() {
     }, []);
     return (
         <Element.Container className='main-container' >
+      <Header data={data}></Header>
         < div class="container, PostProfile">
             <div class="row">
                 <div class="col-sm">
