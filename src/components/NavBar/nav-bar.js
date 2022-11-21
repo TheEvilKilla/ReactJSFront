@@ -8,17 +8,17 @@ import other from '../../assets/other.svg';
 import './nav-bar.css';
 
 function NavBar() {
-    const buttonsContent = [{ text: 'Restaurantes', icon: restaurant },
-    { text: 'Hoteles', icon: hotel },
-    { text: 'Veterinarias', icon: vet },
-    { text: 'Cosas por hacer', icon: other }];
+    const buttonsContent = [{ text: 'Restaurantes', icon: restaurant, href: '/restaurants' },
+    { text: 'Hoteles', icon: hotel, href: '/hotels'},
+    { text: 'Veterinarias', icon: vet, href: '/vets' },
+    { text: 'Cosas por hacer', icon: other, href: '/events' }];
 
     return (
         <div className='nav-bar'>
             <Element.Row className='nav-bar-row'>
                 {buttonsContent.map(btn => (
                     <Element.Col className='nav-bar-element'>
-                        <NavButton text={btn.text} icon={btn.icon} />
+                        <NavButton text={btn.text} icon={btn.icon} href={btn.href} />
                     </Element.Col>
                 ))}
             </Element.Row>

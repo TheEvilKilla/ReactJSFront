@@ -20,31 +20,30 @@ function PostProfile() {
     }, []);
     return (
         <Element.Container className='main-container' >
-      <Header data={data}></Header>
-        < div class="container, PostProfile">
-            <div class="row">
-                <div class="col-sm">
-                    <h1>Perfil</h1>
+            < div class="container, PostProfile">
+                <div class="row">
+                    <div class="col-sm">
+                        <h1>Perfil</h1>
+                    </div>
+                    <div class="col-8">
+                    </div>
                 </div>
-                <div class="col-8">
+                <div class="row">
+                    <div class="col-2">
+                    </div>
+                    <div class="col-2">
+                        <img src={perfil} alt="icono perfil" height="150" width="150" />
+                    </div>
+                    <div class="col-8">
+                        <h3>{profile.name}</h3>
+                        <h4>{profile.login}</h4>
+                        <h4>{profile.city}</h4>
+                    </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col-2">
-                </div>
-                <div class="col-2">
-                    <img src={perfil} alt="icono perfil" height="150" width="150" />
-                </div>
-                <div class="col-8">
-                    <h3>{profile.name}</h3>
-                    <h4>{profile.login}</h4>
-                    <h4>{profile.city}</h4>
-                </div>
-              
-            </div>
-        </div>
-        <PostPet>   
-        </PostPet>
+            <PostPet>
+            </PostPet>
         </Element.Container>
     );
 }

@@ -13,7 +13,6 @@ import UserIcon from '../UserIcon/user-icon';
 function FrontPage() {
   return (
     <Element.Container className='main-container' >
-      <Header data={data}></Header>
       <img src={logo} />
       <Element.Container className='close-events-container'>
         <h1 className='close-events-text' style={{
