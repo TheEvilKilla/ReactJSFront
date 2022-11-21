@@ -1,6 +1,8 @@
 import React from 'react';
 import * as Element from "react-bootstrap";
 import './user-icon.scss';
+import logo from '../../assets/perfil.png';
+
 
 function UserIcon({ image, options }) {
     //https://react-bootstrap.github.io/components/dropdowns/
@@ -17,7 +19,7 @@ function UserIcon({ image, options }) {
                     padding: '0',
                     backgroundColor: 'rgba(255,255,255,0)'
                 }}>
-                    <Element.Image className='user-icon' src={image} style={{
+                    <Element.Image className='user-icon' src={logo} style={{
                         borderRadius: '100%',
                         maxWidth: '58px',
                         maxHeight: '58px',
@@ -29,8 +31,7 @@ function UserIcon({ image, options }) {
                     {
                         //TODO Se pueden replicar las opciones dependiendo lo que se busque.
                     }
-                    <Element.Dropdown.Item href="#/action-1">Perfil</Element.Dropdown.Item>
-                    <Element.Dropdown.Item href="#/action-2">Mis mascotas</Element.Dropdown.Item>
+                    <Element.Dropdown.Item href="/users">Perfil</Element.Dropdown.Item>
                     <Element.Dropdown.Divider />
                     <Element.Dropdown.Item href="#/action-3">Cerrar sesion</Element.Dropdown.Item>
                 </Element.Dropdown.Menu>
