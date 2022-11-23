@@ -1,23 +1,34 @@
-import "./PostProfile"
-import perfil from "../../assets/perfil.png"
 import React, { useEffect, useState } from 'react';
 import * as Element from 'react-bootstrap';
+import perfil from "../../assets/perfil.png";
 import PostPet from "../PostPet/PostPet";
-import Header from '../Header/header';
-import data from '../../MOCK_DATA.json';
+import "./PostProfile";
 
 
 function PostProfile() {
     const [profile, setProfiles] = useState([]);
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/c7f8d124-adea-45f2-8022-026df0f1f43f";
+            "http://localhost:3000/api/v1/users/42d1d0ad-398f-4997-b5c7-ad1217048a43";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
                 setProfiles(data);
             });
     }, []);
+
+    const [pets, setPets] = useState([]);
+    useEffect(() => {
+        const URL =
+            "http://localhost:3000/api/v1/users/42d1d0ad-398f-4997-b5c7-ad1217048a43";
+        fetch(URL)
+            .then((data) => data.json())
+            .then((data) => {
+                setPets(data.pets);
+            });
+    }, []);
+
+    console.log(pets);
     return (
         <Element.Container className='main-container' >
             < div class="container, PostProfile">
@@ -39,12 +50,16 @@ function PostProfile() {
                         <h4>{profile.login}</h4>
                         <h4>{profile.city}</h4>
                     </div>
-
                 </div>
             </div>
-            <PostPet>
-            </PostPet>
+            <div>
+                {pets.map(elem => {
+                    return (
+                        <PostPet name={elem.name} species={elem.species} image={elem.image} ></PostPet>)
+                })}
+            </div>
         </Element.Container>
+
     );
 }
 
