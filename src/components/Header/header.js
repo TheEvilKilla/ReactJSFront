@@ -3,6 +3,7 @@ import * as Element from "react-bootstrap";
 import SearchBar from '../SearchBar/search-bar';
 import UserIcon from '../UserIcon/user-icon';
 import NavBar from '../NavBar/nav-bar';
+import HeaderLogo from '../../assets/PetPlace.svg';
 import './header.scss';
 
 function Header({ data }) {
@@ -35,7 +36,16 @@ function Header({ data }) {
                 display: 'flex',
                 alignItems: 'center',
             }}>
-                <div style={{ width: '20%', }} />
+                <div>
+                    <a href='/'>
+                        <img src={HeaderLogo} style={{
+                            width: '145px',
+                            maxWidth: '145px',
+
+                        }}></img>
+                    </a>
+                </div>
+                <div style={{ width: '10%', }} />
                 <div style={{
                     width: '700px',
                 }}>

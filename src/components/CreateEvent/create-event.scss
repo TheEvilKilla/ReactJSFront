@@ -1,0 +1,29 @@
+.create-event-image {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 75%;
+    }
+}
+
+.create-event-image:hover {
+    cursor: pointer;
+}
+
+.create-event-image-upload>input {
+    display: none;
+    cursor: pointer;
+}
+
+.event-multiselect {
+    width: 525px;
+    height: auto;
+    min-height: 42px;
+
+}
+
+.event-date-form {
+    width: 525px;
+    height: 52px;
+    padding-bottom: 10px;
+}
