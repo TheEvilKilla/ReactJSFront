@@ -3,6 +3,7 @@ import * as Element from 'react-bootstrap';
 import perfil from "../../assets/perfil.png";
 import PostPet from "../PostPet/PostPet";
 import "./PostProfile";
+import { FormattedMessage } from 'react-intl';
 
 
 function PostProfile() {
@@ -34,7 +35,7 @@ function PostProfile() {
             < div class="container, PostProfile">
                 <div class="row">
                     <div class="col-sm">
-                        <h1>Perfil</h1>
+                    <h1 scope="col"> <FormattedMessage id="Profile" /></h1>
                     </div>
                     <div class="col-8">
                     </div>
@@ -53,6 +54,8 @@ function PostProfile() {
                 </div>
             </div>
             <div>
+            <h1 scope="col"> <FormattedMessage id="MyPets" /></h1>
+
                 {pets.map(elem => {
                     return (
                         <PostPet name={elem.name} species={elem.species} image={elem.image} ></PostPet>)
@@ -62,6 +65,5 @@ function PostProfile() {
 
     );
 }
-
 
 export default PostProfile;

@@ -11,26 +11,32 @@ import PostPet from "./components/PostPet/PostPet";
 import PostProfile from "./components/PostProfile/PostProfile";
 import './index.css';
 import data from './MOCK_DATA.json';
+import localeEsMessages from "./locales/es_profile";
+import localeEnMessages from "./locales/en_profile";
+import { IntlProvider } from 'react-intl';
+
 
 var usrlang = navigator.language;
 
+
 function App() {
   return (
-   
+
     <Element.Container className='main-container' >
-      <Header data={data}/>
+      <IntlProvider locale={usrlang === 'es-ES' ? 'es-ES' : 'en-EN'} messages={usrlang === 'es-ES' ? localeEsMessages : localeEnMessages}>
+      <Header data={data} />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<FrontPage/>} />
-          <Route path="/mascotas" element={<PostPet />} />
-          <Route path="/users/" element={<PostProfile/>} />
-          <Route path="/events" element={<EventList/>} />
+          <Route path="/" element={<FrontPage />} />
+            <Route path="/users/" element={<PostProfile />} />
+          <Route path="/events" element={<EventList />} />
         </Routes>
       </BrowserRouter>
-      <Footer/>
+      <Footer />
+      </IntlProvider>
     </Element.Container >
   );
-  
+
   //Se comenta porque no funciona.
   /*root.render(
       <EstablishmentCard name='La perrera' address='Calle 44d' type='Restaurante' city='Bogota' image='https://th.bing.com/th/id/OIP.CyLB5L3r3QlAls4bDpbcCgHaE9?pid=ImgDet&rs=1'/>
