@@ -2,6 +2,7 @@ import './AnswerCard.css'
 import { FormControl, FormFloating, Card, AccordionButton, Accordion, Row } from 'react-bootstrap';
 import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
+import { FormattedDate } from 'react-intl';
 
 function AnswerCard(props) {
     return (
@@ -17,7 +18,15 @@ function AnswerCard(props) {
         }}>
             <Card.Body /*style={{ display: 'flex'}}*/>
                 <Card.Title>{props.answer.user}</Card.Title>
-                <Card.Subtitle style={{ fontSize: '16px' }}>{props.answer.date}</Card.Subtitle>
+                <Card.Subtitle style={{ fontSize: '16px' }}>
+                <FormattedDate
+                value={new Date(props.answer.date)}
+                year='numeric'
+                month='long'
+                day='numeric'
+                weekday='long'
+                 />  
+                </Card.Subtitle>
                 <br></br>
                 <Card.Text>{props.answer.description}</Card.Text>
             </Card.Body>

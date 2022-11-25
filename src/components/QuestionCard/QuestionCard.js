@@ -4,6 +4,7 @@ import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 import { useEffect, useState } from 'react';
 import AnswerCard from '../AnswerCard/AnswerCard';
+import { FormattedDate } from 'react-intl';
 
 function QuestionCard(props) {
 
@@ -22,7 +23,15 @@ function QuestionCard(props) {
         <Card className='cardQ'> 
           <Card.Body /*style={{ display: 'flex'}}*/>
             <Card.Title>{props.question.user}</Card.Title>
-            <Card.Subtitle style={{  fontSize: '16px' }}>{props.question.date}</Card.Subtitle>         
+            <Card.Subtitle style={{  fontSize: '16px' }}>
+            <FormattedDate
+            value={new Date(props.question.date)}
+            year='numeric'
+            month='long'
+            day='numeric'
+            weekday='long'
+          />  
+            </Card.Subtitle>         
             <br></br>
             <Card.Text>{props.question.description}</Card.Text>   
             <AccordionButton className = 'acord'><strong>Ver respuestas</strong></AccordionButton>

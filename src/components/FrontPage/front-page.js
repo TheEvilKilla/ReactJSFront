@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import * as Element from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 import logo from '../../assets/Logo.svg';
 import CreateEvent from '../CreateEvent/create-event';
 import EventList from '../EventList/event-list';
@@ -22,11 +23,15 @@ function FrontPage() {
         <EventList></EventList>
       </Element.Container>
       <Element.Container className="mt-3">
-        <h1 className='my-questions'>
-          Mis preguntas:
+        <h1 className='my-questions' style={{
+          paddingTop: '50px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <FormattedMessage id = "MyQuestions"/>
         </h1>
-        <QuestionsList user='Usuario X' date='3 de marzo' content='¿Lorem ipsum dolor sit amet,  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-       quis  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ?' placeholder='Responder'></QuestionsList>
+        <QuestionsList ></QuestionsList>
       </Element.Container>
       <CreateEvent></CreateEvent>
     </Element.Container >

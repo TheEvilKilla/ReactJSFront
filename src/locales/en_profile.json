@@ -1,5 +1,6 @@
 {
     "Profile": "Profile",
     "MyPets": "My pets", 
-    "AddPets": "ADD A PET"
+    "AddPets": "ADD A PET",
+    "MyQuestions" : "My questions"
 }
