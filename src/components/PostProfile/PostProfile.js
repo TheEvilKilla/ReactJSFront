@@ -9,7 +9,7 @@ function PostProfile() {
     const [profile, setProfiles] = useState([]);
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/42d1d0ad-398f-4997-b5c7-ad1217048a43";
+            "http://localhost:3000/api/v1/users/faf39a45-207d-4c93-ab91-5ea998edccfe";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
@@ -20,7 +20,7 @@ function PostProfile() {
     const [pets, setPets] = useState([]);
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/42d1d0ad-398f-4997-b5c7-ad1217048a43";
+            "http://localhost:3000/api/v1/users/faf39a45-207d-4c93-ab91-5ea998edccfe";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {

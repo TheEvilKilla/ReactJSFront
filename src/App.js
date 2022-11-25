@@ -12,9 +12,11 @@ import PostProfile from "./components/PostProfile/PostProfile";
 import './index.css';
 import data from './MOCK_DATA.json';
 
+var usrlang = navigator.language;
 
 function App() {
   return (
+   
     <Element.Container className='main-container' >
       <Header data={data}/>
       <BrowserRouter>
