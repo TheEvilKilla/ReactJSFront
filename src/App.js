@@ -1,34 +1,35 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import * as Element from 'react-bootstrap';
+import { IntlProvider } from 'react-intl';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import EventList from './components/EventList/event-list';
 import Footer from './components/Footer/footer';
 import FrontPage from './components/FrontPage/front-page';
 import Header from './components/Header/header';
-import PostPet from "./components/PostPet/PostPet";
+import Login from './components/Create-Login/login/login';
 import PostProfile from "./components/PostProfile/PostProfile";
 import './index.css';
-import data from './MOCK_DATA.json';
-import localeEsMessages from "./locales/es_profile";
 import localeEnMessages from "./locales/en_profile";
-import { IntlProvider } from 'react-intl';
+import localeEsMessages from "./locales/es_profile";
+import data from './MOCK_DATA.json';
+import CreateAccount from './components/Create-Login/create-account/create-account';
 
 
 var usrlang = navigator.language;
 
-
 function App() {
   return (
-
     <Element.Container className='main-container' >
       <IntlProvider locale={usrlang === 'es-ES' ? 'es-ES' : 'en-EN'} messages={usrlang === 'es-ES' ? localeEsMessages : localeEnMessages}>
       <Header data={data} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<FrontPage />} />
-            <Route path="/users/" element={<PostProfile />} />
+          <Route path="/create" element={<CreateAccount />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/users/" element={<PostProfile />} />
           <Route path="/events" element={<EventList />} />
         </Routes>
       </BrowserRouter>

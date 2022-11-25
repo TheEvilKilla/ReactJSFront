@@ -2,5 +2,11 @@
     "Profile": "Profile",
     "MyPets": "My pets", 
     "AddPets": "ADD A PET",
-    "MyQuestions" : "My questions"
+    "MyQuestions" : "My questions",
+    "Restaurants" : "Restaurants",
+    "Hotels": "Hotels",
+    "Vets" : "Vets",
+    "Events": "Events",
+    "Search" : "Search",
+    "TopEvents": "Top Events near you"
 }

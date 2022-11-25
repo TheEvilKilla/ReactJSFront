@@ -3,7 +3,7 @@ import * as Element from 'react-bootstrap';
 import { MultiSelect } from 'primereact/multiselect';
 import WalkingPet from '../../assets/walkingPet.jpg';
 import { Calendar } from 'primereact/calendar';
-import { addLocale } from 'primereact/api';
+import { Dropdown } from 'primereact/dropdown';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
@@ -40,6 +40,14 @@ function CreateEvent() {
         { name: 'United States' }
     ];
 
+    const cities = [
+        { name: 'New York', code: 'NY' },
+        { name: 'Rome', code: 'RM' },
+        { name: 'London', code: 'LDN' },
+        { name: 'Istanbul', code: 'IST' },
+        { name: 'Paris', code: 'PRS' }
+    ];
+
     const cityTemplate = (option) => {
         return (
             <div className="country-item">
@@ -67,6 +75,10 @@ function CreateEvent() {
                 <b>{length}</b> elemento{length < 2 ? '' : 's'} seleccionado{length < 2 ? '' : 's'}.
             </div>
         );
+    }
+
+    const onCityChange = (e) => {
+        setSelectedCity(e.value);
     }
 
     return (
@@ -143,13 +155,7 @@ function CreateEvent() {
                             paddingBottom: '10px',
                             maxWidth: '525px'
                         }}>
-                            <Element.Form.Select className='event-city-form' controlId='formEventCity' value={selectedCity} onChange={(e) => setSelectedCity(e.value)} style={{
-                                paddingBottom: '8px',
-                                paddingTop: '8px',
-                                color: 'gray'
-                            }}>
-                                <option>Seleccione la ciudad el evento</option>
-                            </Element.Form.Select>
+                            <Dropdown className='event-city-form' value={selectedCity} options={cities} onChange={onCityChange} optionLabel="name" placeholder="Seleccione una ciudad" />
                         </div>
                         <Calendar className='event-date-form' value={date} onChange={(e) => setDate(e.value)} showTime selectionMode="range" minDate={minDate}
                             placeholder='Fecha y hora del evento' />

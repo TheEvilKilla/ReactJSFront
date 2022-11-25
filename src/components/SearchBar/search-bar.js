@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as Element from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 import closeIcon from '../../assets/close.png';
 import searchIcon from '../../assets/magnifying-glass.png';
 import './search-bar.css';

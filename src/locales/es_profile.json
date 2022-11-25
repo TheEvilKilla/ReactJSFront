@@ -2,5 +2,11 @@
     "Profile": "Perfil",
     "MyPets": "Mis mascotas", 
     "AddPets": "AGREGAR MASCOTA",
-    "MyQuestions" : "Mis preguntas"
+    "MyQuestions" : "Mis preguntas",
+    "Restaurants" : "Restaurantes",
+    "Hotels": "Hoteles",
+    "Vets" : "Veterinarias",
+    "Events": "Cosas por hacer",
+    "Search" : "Busqueda",
+    "TopEvents": "Top eventos cercanos a ti"
 }

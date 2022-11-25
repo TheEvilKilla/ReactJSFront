@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Element from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 import './nav-button.css';
 
 function NavButton({ text, icon, href }) {
