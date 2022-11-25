@@ -3,13 +3,14 @@ import * as Element from 'react-bootstrap';
 import perfil from "../../assets/perfil.png";
 import PostPet from "../PostPet/PostPet";
 import "./PostProfile";
+import { FormattedMessage } from 'react-intl';
 
 
 function PostProfile() {
     const [profile, setProfiles] = useState([]);
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/42d1d0ad-398f-4997-b5c7-ad1217048a43";
+            "http://localhost:3000/api/v1/users/faf39a45-207d-4c93-ab91-5ea998edccfe";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
@@ -20,7 +21,7 @@ function PostProfile() {
     const [pets, setPets] = useState([]);
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/42d1d0ad-398f-4997-b5c7-ad1217048a43";
+            "http://localhost:3000/api/v1/users/faf39a45-207d-4c93-ab91-5ea998edccfe";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
@@ -34,7 +35,7 @@ function PostProfile() {
             < div class="container, PostProfile">
                 <div class="row">
                     <div class="col-sm">
-                        <h1>Perfil</h1>
+                    <h1 scope="col"> <FormattedMessage id="Profile" /></h1>
                     </div>
                     <div class="col-8">
                     </div>
@@ -53,6 +54,8 @@ function PostProfile() {
                 </div>
             </div>
             <div>
+            <h1 scope="col"> <FormattedMessage id="MyPets" /></h1>
+
                 {pets.map(elem => {
                     return (
                         <PostPet name={elem.name} species={elem.species} image={elem.image} ></PostPet>)
@@ -62,6 +65,5 @@ function PostProfile() {
 
     );
 }
-
 
 export default PostProfile;
