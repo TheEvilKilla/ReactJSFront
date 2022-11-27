@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as Element from 'react-bootstrap';
+import { useIntl } from 'react-intl';
 import { FormattedMessage } from 'react-intl';
 import closeIcon from '../../assets/close.png';
 import searchIcon from '../../assets/magnifying-glass.png';
@@ -25,6 +26,8 @@ function SearchBar({ placeholder, data }) {
         setInputValue('');
     }
 
+    const intl = useIntl();
+
     return (
         <div className='search-bar' style={{
             paddingTop: '45px',
@@ -36,10 +39,15 @@ function SearchBar({ placeholder, data }) {
                 border: '2px solid #000000',
                 borderRadius: '50px',
             }}>
-                <Element.Form.Control className='search-bar-input' type='text' value={inputValue} placeholder={placeholder} onChange={filter} style={{
-                    borderColor: 'rgba(0,0,0,0)',
-                    backgroundColor: 'rgba(0,0,0,0)',
-                }} />
+                
+                <FormattedMessage id={placeholder}>
+                    {ph =>
+                        <Element.Form.Control className='search-bar-input' type='text' value={inputValue} placeholder={ph} onChange={filter} style={{
+                            borderColor: 'rgba(0,0,0,0)',
+                            backgroundColor: 'rgba(0,0,0,0)',
+                        }} />
+                    }
+                </FormattedMessage>
                 <Element.Button className='search-bar-button' style={{
                     display: 'flex',
                     border: 'none',

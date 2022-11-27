@@ -49,7 +49,7 @@ function Header({ data }) {
                 <div style={{
                     width: '700px',
                 }}>
-                    <SearchBar placeholder='Busqueda' data={data} />
+                    <SearchBar placeholder='Search' data={data} />
                 </div>
                 <div style={{ width: '20%', }} />
                 <div style={{

@@ -4,7 +4,7 @@ import perfil from "../../assets/perfil.png";
 import PostPet from "../PostPet/PostPet";
 import "./PostProfile";
 import { FormattedMessage } from 'react-intl';
-import Login from '../Create-Login/login/login';
+import Login from '../SignIn/login/login';
 
 
 function PostProfile() {
@@ -12,7 +12,7 @@ function PostProfile() {
 
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/a7b274f0-48df-4d6f-afbd-fd4cb9b2cc72";
+            "http://localhost:3000/api/v1/users/286f816b-9376-4299-82aa-e4c0328d8cea";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
@@ -23,7 +23,7 @@ function PostProfile() {
     const [pets, setPets] = useState([]);
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/a7b274f0-48df-4d6f-afbd-fd4cb9b2cc72";
+            "http://localhost:3000/api/v1/users/286f816b-9376-4299-82aa-e4c0328d8cea";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {

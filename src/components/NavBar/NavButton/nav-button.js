@@ -37,7 +37,7 @@ function NavButton({ text, icon, href }) {
                                 maxWidth: '210px',
                                 color: '#000',
                                 padding: '0'
-                            }}>{text}</h2>
+                            }}><FormattedMessage id={text} /></h2>
                         </Element.Col>
                         <Element.Col className='nav-button-col-image' style={{
                             display: 'flex',

@@ -17,7 +17,7 @@ function FrontPage() {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-          Top eventos cercanos a tí
+          <FormattedMessage id="TopEvents" />
         </h1>
         <EventList></EventList>
       </Element.Container>
