@@ -2,5 +2,8 @@
     "Profile": "Perfil",
     "MyPets": "Mis mascotas", 
     "AddPets": "AGREGAR MASCOTA",
-    "MyQuestions" : "Mis preguntas"
+    "MyQuestions" : "Mis preguntas",
+    "publish": "PUBLICAR",
+    "answer": "Responder...",
+    "viewAnswers" : "Ver respuestas"
 }
