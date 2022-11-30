@@ -46,7 +46,8 @@ function Login() {
 
         setValidated(true);
         if (profile.length !== 0){
-            localStorage.setItem('user', JSON.stringify(profile));
+            const perfil = profile[0].id;
+            localStorage.setItem('user', perfil);
             navigate('/');
         }            
     };
