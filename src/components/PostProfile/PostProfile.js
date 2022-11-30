@@ -4,13 +4,15 @@ import perfil from "../../assets/perfil.png";
 import PostPet from "../PostPet/PostPet";
 import "./PostProfile";
 import { FormattedMessage } from 'react-intl';
+import Login from '../SignIn/login/login';
 
 
 function PostProfile() {
     const [profile, setProfiles] = useState([]);
+
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/faf39a45-207d-4c93-ab91-5ea998edccfe";
+            "http://localhost:3000/api/v1/users/286f816b-9376-4299-82aa-e4c0328d8cea";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
@@ -21,7 +23,7 @@ function PostProfile() {
     const [pets, setPets] = useState([]);
     useEffect(() => {
         const URL =
-            "http://localhost:3000/api/v1/users/faf39a45-207d-4c93-ab91-5ea998edccfe";
+            "http://localhost:3000/api/v1/users/286f816b-9376-4299-82aa-e4c0328d8cea";
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
@@ -29,7 +31,6 @@ function PostProfile() {
             });
     }, []);
 
-    console.log(pets);
     return (
         <Element.Container className='main-container' >
             < div class="container, PostProfile">

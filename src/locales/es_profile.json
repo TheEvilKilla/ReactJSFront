@@ -1,9 +1,16 @@
 {
     "Profile": "Perfil",
     "MyPets": "Mis mascotas", 
+    "Log Out" : "Cerrar sesión",
     "AddPets": "AGREGAR MASCOTA",
     "MyQuestions" : "Mis preguntas",
     "publish": "PUBLICAR",
     "answer": "Responder...",
-    "viewAnswers" : "Ver respuestas"
+    "viewAnswers" : "Ver respuestas",
+    "Restaurants" : "Restaurantes",
+    "Hotels": "Hoteles",
+    "Vets" : "Veterinarias",
+    "Events": "Cosas por hacer",
+    "Search" : "Busqueda",
+    "TopEvents": "Top eventos cercanos a ti"
 }
