@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import * as Element from 'react-bootstrap';
-import EstablishmentCard from './EstablishmentCard/EstablishmentCard';
-import './establishment-list.css';
+import EstablishmentCard from '../EstablishmentCard/EstablishmentCard';
+import '../establishment-list.css';
 
-function EstablishmentList(tema) {
+function RestaurantList() {
     const [establishment, setEstablishment] = useState([]);
     useEffect(() => {
         const URL =
@@ -11,7 +11,7 @@ function EstablishmentList(tema) {
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
-                setEstablishment(data.filter((data) => data.type === tema));
+                setEstablishment(data.filter((data) => data.type === "Restaurant"));
             });
     }, []);
     return (
@@ -26,4 +26,4 @@ function EstablishmentList(tema) {
             </Element.Col>
         </div>
     );
-} export default EstablishmentList;
+} export default RestaurantList;

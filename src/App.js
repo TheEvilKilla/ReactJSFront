@@ -4,7 +4,9 @@ import * as Element from 'react-bootstrap';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import EventList from './components/EventList/event-list';
-import EstablishmentList from './components/EstablishmentList/establishment-list';
+import RestaurantList from './components/EstablishmentList/Restaurant/establishment-list';
+import HotelList from './components/EstablishmentList/Hotel/establishment-list';
+import VetList from './components/EstablishmentList/Vet/establishment-list';
 import Footer from './components/Footer/footer';
 import FrontPage from './components/FrontPage/front-page';
 import Header from './components/Header/header';
@@ -31,8 +33,9 @@ function App() {
           <Route path="/" element={<FrontPage />} />
           <Route path="/users/" element={<PostProfile />} />
           <Route path="/events" element={<EventList />} />
-          <Route path="/establishments/restaurants" element={<EstablishmentList />} />
-          <Route path="/establishments/hotels" element={<EstablishmentList />} />
+          <Route path="/establishments/restaurants" element={<RestaurantList/>}/>
+          <Route path="/establishments/hotels" element={<HotelList />} />
+          <Route path="/establishments/vets" element={<VetList />} />
         </Routes>
       </BrowserRouter>
       <Footer />
