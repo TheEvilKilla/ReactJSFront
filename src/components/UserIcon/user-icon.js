@@ -1,12 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import * as Element from "react-bootstrap";
 import { FormattedMessage } from 'react-intl';
 import logo from '../../assets/perfil.png';
 import './user-icon.scss';
 
-
-
 function UserIcon({ image, options }) {
+    const logout = () => {
+        localStorage.clear();
+    }
+
+    const isLogged = () => {
+        return (
+            <Element.Dropdown.Menu>
+                <Element.Dropdown.Item href="/users"><FormattedMessage id="Profile" /></Element.Dropdown.Item>
+                <Element.Dropdown.Divider />
+                <Element.Dropdown.Item href='/' onClick={() => logout()}><FormattedMessage id="Log Out" /></Element.Dropdown.Item>
+            </Element.Dropdown.Menu>
+        );
+    }
+
+    const notLogged = () => {
+        return (
+            <Element.Dropdown.Menu>
+                <Element.Dropdown.Item href="/login">Login</Element.Dropdown.Item>
+            </Element.Dropdown.Menu>
+        );
+    }
     //https://react-bootstrap.github.io/components/dropdowns/
     return (
         <div className='user-icon-container'>
@@ -29,14 +48,9 @@ function UserIcon({ image, options }) {
                     }}>
                     </Element.Image>
                 </Element.Dropdown.Toggle>
-                <Element.Dropdown.Menu>
-                    {
-                        //TODO Se pueden replicar las opciones dependiendo lo que se busque.
-                    }
-                    <Element.Dropdown.Item href="/users"><FormattedMessage id="Profile"/></Element.Dropdown.Item>
-                    <Element.Dropdown.Divider />
-                    <Element.Dropdown.Item href="#/action-3"><FormattedMessage id="Log Out"/></Element.Dropdown.Item>
-                </Element.Dropdown.Menu>
+                {
+                    localStorage.getItem('user') !== null ? isLogged() : notLogged()
+                }
             </Element.Dropdown>
         </div>
     );

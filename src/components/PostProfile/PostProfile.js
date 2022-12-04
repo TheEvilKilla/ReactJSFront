@@ -12,13 +12,14 @@ function PostProfile() {
     const [profile, setProfiles] = useState([]);
 
     useEffect(() => {
-        const URL =
-            "http://localhost:3000/api/v1/users/e9aaea36-9a0d-44aa-a9ba-ac5b01e6810c";
+        if(localStorage.getItem('user') !== null){
+            const URL = `http://localhost:3000/api/v1/users/${localStorage.getItem('user')}`;
         fetch(URL)
             .then((data) => data.json())
             .then((data) => {
                 setProfiles(data);
             });
+        }        
     }, []);
 
     const [pets, setPets] = useState([]);

@@ -49,6 +49,7 @@ function Login() {
             const perfil = profile[0].id;
             localStorage.setItem('user', perfil);
             navigate('/');
+            window.location.reload();
         }            
     };
 
