@@ -17,6 +17,7 @@ import data from './MOCK_DATA.json';
 import localeEsMessages from "./locales/es_profile";
 import localeEnMessages from "./locales/en_profile";
 import { IntlProvider } from 'react-intl';
+import EstablishmentCardDetail from './components/EstablishmentList/EstablishmentCard/EstablishmentCardDetail';
 
 
 var usrlang = navigator.language;
@@ -36,6 +37,7 @@ function App() {
           <Route path="/establishments/restaurants" element={<RestaurantList/>}/>
           <Route path="/establishments/hotels" element={<HotelList />} />
           <Route path="/establishments/vets" element={<VetList />} />
+          <Route path="/establishments/:id" element={<EstablishmentCardDetail/>} />
         </Routes>
       </BrowserRouter>
       <Footer />

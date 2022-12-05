@@ -20,7 +20,7 @@ function VetList() {
                 {establishment.slice(0, 5).map(elem => {
                     return (
                     <Element.Row>
-                        <EstablishmentCard margin-bottom={"20rem"} image={elem.name} address={elem.address} city={elem.city} ></EstablishmentCard>
+                        <EstablishmentCard margin-bottom={"20rem"} id={elem.id} name={elem.name} image={elem.image} address={elem.address} city={elem.city} description={elem.description} ></EstablishmentCard>
                     </Element.Row>)
                 })}
             </Element.Col>

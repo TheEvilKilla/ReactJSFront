@@ -2,30 +2,35 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import '../EstablishmentCard/EstablishmentCard.css';
 
-function EstablishmentCard({ name, address, city}) {
+function EstablishmentCard({id, name, address, city, image}) {
+  var urlT = "http://localhost:3001/establishments/"+id
   return (
-    <Card style={{ width: '85rem', margin: "2rem 2rem 0rem 0rem" }}>
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
+    <div>
+      <Card style={{ width: '81rem', margin: "2rem 2rem 0rem 0rem" }}>
+      <Card.Body className="event-card-allign">
         <Card.Text>
-          <Col sm={4}>
-            <img className="event-card-image" src='https://th.bing.com/th/id/R.e7961605ad028fd58e1dc22f49119dc1?rik=dkcvD%2f0EZ0ULzQ&riu=http%3a%2f%2fwww.storytrender.com%2fwp-content%2fuploads%2f2018%2f09%2f25_MPM-LUXURY_DOG_HOTEL-8-1024x683.jpg&ehk=2el9ycQfGll62JEMmx1xtKfpqbiKbqadOYuTM3z%2fz7w%3d&risl=&pid=ImgRaw&r=0' style={{
-                                    borderRadius: '20%',
-                                    maxWidth: '252px',
-                                    maxHeight: '252px',
+          <Row>
+          <Col sm={3}>
+            <img className="event-card-image" src={image} style={{
+                                    borderRadius: '10%',
+                                    maxWidth: '300px',
+                                    maxHeight: '300px',
                                 }} />
           </Col>
-          <Col sm={8}>
+          <Col sm={9}>
             <h1>{name}</h1>
             <h5>{city}</h5>
             <h3>{address}</h3>
-            <h3>{city}</h3>
           </Col>
+          <Button variant="text" href={urlT}>Read More</Button>
+          </Row>
         </Card.Text>
-        <Button variant="text">Read More</Button>
       </Card.Body>
     </Card>
+    </div>
   );
 }
 
