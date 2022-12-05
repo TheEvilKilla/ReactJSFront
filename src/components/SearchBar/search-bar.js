@@ -56,11 +56,11 @@ function SearchBar({ placeholder, data }) {
                     alignItems: 'center'
                 }}>{
                         filteredData.length !== 0 || inputValue.length !== 0 ?
-                            <img className='search-bar-button-image' src={closeIcon} onClick={clearInput} style={{
+                            <img className='search-bar-button-image' src={closeIcon} onClick={clearInput} alt ="search" style={{
                                 maxHeight: '20px',
                                 maxWidth: '20px',
                             }} /> :
-                            <img className='search-bar-button-image' src={searchIcon} style={{
+                            <img className='search-bar-button-image' src={searchIcon} alt = "search" style={{
                                 maxHeight: '26px',
                                 maxWidth: '26px',
                             }} />

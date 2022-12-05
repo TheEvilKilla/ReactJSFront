@@ -1,6 +1,8 @@
 import React from 'react';
 import * as Element from "react-bootstrap";
 import FooterLogo from '../../assets/footerLogo.png';
+import { FormattedMessage } from 'react-intl';
+
 
 import './footer.scss';
 
@@ -18,7 +20,7 @@ function Footer() {
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                        <img src={FooterLogo} style={{
+                        <img src={FooterLogo} alt = "logo" style={{
                             maxWidth: '78px',
                             maxHeight: '78px'
                         }}></img>
@@ -27,7 +29,9 @@ function Footer() {
                         paddingTop: '10px',
                         textAlign: 'center'
                     }}>
-                        <h5>Hecho con PetAd. Copyright 2022 - Todos los derechos reservados</h5>
+                        <h2 style ={{
+                            fontSize: '1vw'
+                        }}><FormattedMessage id="Footer" /></h2>
                     </Element.Row>
                 </Element.Col>
             </div>
