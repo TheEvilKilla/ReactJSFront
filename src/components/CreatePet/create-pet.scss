@@ -1,0 +1,35 @@
+.create-pet-image {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 75%;
+    }
+}
+
+.create-pet-image:hover {
+    cursor: pointer;
+}
+
+.create-pet-image-upload>input {
+    display: none;
+    cursor: pointer;
+}
+
+.pet-multiselect {
+    width: 525px;
+    height: auto;
+    min-height: 42px;
+
+}
+
+.pet-city-form {
+    width: 525px;
+    height: auto;
+    min-height: 42px;
+}
+
+.pet-date-form {
+    width: 525px;
+    height: 52px;
+    padding-bottom: 10px;
+}
