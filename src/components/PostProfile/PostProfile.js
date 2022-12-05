@@ -71,9 +71,9 @@ function PostProfile() {
                         <img src={perfil} alt="icono perfil" height="150" width="150" />
                         </Col>
                         <Col>
-                        <h3>{profile.name}</h3>
-                        <h4>{profile.login}</h4>
-                        <h4>{profile.city}</h4>
+                        <h2>{profile.name}</h2>
+                        <h3>{profile.login}</h3>
+                        <h3>{profile.city}</h3>
                         </Col>
                     </Row>
             </div>

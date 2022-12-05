@@ -5,11 +5,18 @@ import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import * as Element from 'react-bootstrap';
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
+  <Element.Container >
+
   <App></App>
+  </Element.Container >
+
+
 );
 
 // If you want your app to work offline and load faster, you can change

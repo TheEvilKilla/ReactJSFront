@@ -21,7 +21,7 @@ function UserIcon({ image, options }) {
                     padding: '0',
                     backgroundColor: 'rgba(255,255,255,0)'
                 }}>
-                    <Element.Image className='user-icon' src={logo} style={{
+                    <Element.Image className='user-icon' src={logo} alt = "user icon" style={{
                         borderRadius: '100%',
                         maxWidth: '58px',
                         maxHeight: '58px',

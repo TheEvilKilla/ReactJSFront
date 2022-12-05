@@ -9,7 +9,7 @@ import QuestionsList from '../QuestionsList/QuestionsList';
 function FrontPage() {
   return (
     <Element.Container className='main-container' >
-      <img src={logo} />
+      <img src={logo} alt="imagen principal perro" />
       <Element.Container className='close-events-container'>
         <h1 className='close-events-text' style={{
           paddingTop: '50px',

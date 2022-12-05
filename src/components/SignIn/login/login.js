@@ -48,6 +48,8 @@ function Login() {
         if (profile.length !== 0){
             const perfil = profile[0].id;
             localStorage.setItem('user', perfil);
+            localStorage.setItem('user-complete', profile[0]);
+
             navigate('/');
         }            
     };
