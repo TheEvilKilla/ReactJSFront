@@ -15,7 +15,7 @@ import localeEsMessages from "./locales/es_profile";
 import data from './MOCK_DATA.json';
 import CreateAccount from './components/SignIn/create-account/create-account';
 import './index.css';
-
+import CreatePet from './components/CreatePet/createPet'
 
 let usrlang = navigator.language || navigator.userLanguage;
 function App() {
@@ -30,6 +30,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/users/" element={<PostProfile />} />
           <Route path="/events" element={<EventList />} />
+          <Route path="/pets" element={<CreatePet />} />
+
         </Routes>
       </BrowserRouter>
       <Footer />
