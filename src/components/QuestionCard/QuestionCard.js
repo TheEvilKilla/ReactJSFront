@@ -4,7 +4,7 @@ import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 import { useEffect, useState } from 'react';
 import AnswerCard from '../AnswerCard/AnswerCard';
-import { FormattedDate } from 'react-intl';
+import { FormattedDate, FormattedMessage } from 'react-intl';
 
 function QuestionCard(props) {
 
@@ -34,7 +34,7 @@ function QuestionCard(props) {
             </Card.Subtitle>         
             <br></br>
             <Card.Text>{props.question.description}</Card.Text>   
-            <AccordionButton className = 'acord'><strong>Ver respuestas</strong></AccordionButton>
+            <AccordionButton className = 'acord'><strong><FormattedMessage id = "viewAnswers"/></strong></AccordionButton>
           </Card.Body>
           </Card>
               <AccordionBody>
@@ -45,11 +45,11 @@ function QuestionCard(props) {
             <br></br>
             <FormFloating>
               <FormControl className = "responder" placeholder= {props.placeholder} style = {{height: "100px"}} ></FormControl>
-              <label for="floatingTextarea2">Responder...</label>
+              <label for="floatingTextarea2"><FormattedMessage id = "answer"/></label>
             </FormFloating>
             <div className = "div-1">
               <Row>
-              <button className="btn-publ" >PUBLICAR</button>
+              <button className="btn-publ" ><FormattedMessage id = "publish"/></button>
               </Row>
             </div>
     </div>

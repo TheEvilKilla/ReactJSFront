@@ -6,20 +6,15 @@ import Col from "react-bootstrap/Col";
 import './PostPet.css'
 import dog from "../../assets/perro.jpg"
 
-
 function PostPet({name, species, image}) {
   
   return (
-
         <div className="PostPet">
-          
-            <Card style={{ width: "16rem" }}>
-              
+            <Card style={{ width: "16rem" }}> 
               <Card.Body className="card">
-    
                 <Card.Title>{name}</Card.Title>         
                 <Card.Text>{species}</Card.Text>          
-                <img src ={image} alt = "perro"/>
+                <img src ={image} alt = "imagen de la mascota" className = "card--image"/>
               </Card.Body>
             </Card>
         

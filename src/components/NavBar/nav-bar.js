@@ -1,5 +1,6 @@
 import React from 'react';
 import * as Element from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 import NavButton from './NavButton/nav-button';
 import restaurant from '../../assets/restaurant.svg';
 import hotel from '../../assets/hotel.svg';
@@ -17,7 +18,7 @@ function NavBar() {
         <div className='nav-bar'>
             <Element.Row className='nav-bar-row'>
                 {buttonsContent.map(btn => (
-                    <Element.Col className='nav-bar-element'>
+                    <Element.Col key={btn.text} className='nav-bar-element'>
                         <NavButton text={btn.text} icon={btn.icon} href={btn.href} />
                     </Element.Col>
                 ))}

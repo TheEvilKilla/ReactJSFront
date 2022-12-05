@@ -1,4 +1,4 @@
-.create-event-image {
+.create-pet-image {
     cursor: pointer;
 
     &:hover {
@@ -6,29 +6,29 @@
     }
 }
 
-.create-event-image:hover {
+.create-pet-image:hover {
     cursor: pointer;
 }
 
-.create-event-image-upload>input {
+.create-pet-image-upload>input {
     display: none;
     cursor: pointer;
 }
 
-.event-multiselect {
+.pet-multiselect {
     width: 525px;
     height: auto;
     min-height: 42px;
 
 }
 
-.event-city-form {
+.pet-city-form {
     width: 525px;
     height: auto;
     min-height: 42px;
 }
 
-.event-date-form {
+.pet-date-form {
     width: 525px;
     height: 52px;
     padding-bottom: 10px;

@@ -3,7 +3,6 @@ import React from 'react';
 import * as Element from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl';
 import logo from '../../assets/Logo.svg';
-import CreateEvent from '../CreateEvent/create-event';
 import EventList from '../EventList/event-list';
 import QuestionsList from '../QuestionsList/QuestionsList';
 
@@ -18,7 +17,7 @@ function FrontPage() {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-          Top eventos cercanos a tí
+          <FormattedMessage id="TopEvents" />
         </h1>
         <EventList></EventList>
       </Element.Container>
@@ -33,7 +32,6 @@ function FrontPage() {
         </h1>
         <QuestionsList ></QuestionsList>
       </Element.Container>
-      <CreateEvent></CreateEvent>
     </Element.Container >
   );
 } export default FrontPage;

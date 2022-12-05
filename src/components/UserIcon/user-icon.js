@@ -1,7 +1,9 @@
 import React from 'react';
 import * as Element from "react-bootstrap";
-import './user-icon.scss';
+import { FormattedMessage } from 'react-intl';
 import logo from '../../assets/perfil.png';
+import './user-icon.scss';
+
 
 
 function UserIcon({ image, options }) {
@@ -31,9 +33,9 @@ function UserIcon({ image, options }) {
                     {
                         //TODO Se pueden replicar las opciones dependiendo lo que se busque.
                     }
-                    <Element.Dropdown.Item href="/users">Perfil</Element.Dropdown.Item>
+                    <Element.Dropdown.Item href="/users"><FormattedMessage id="Profile"/></Element.Dropdown.Item>
                     <Element.Dropdown.Divider />
-                    <Element.Dropdown.Item href="#/action-3">Cerrar sesion</Element.Dropdown.Item>
+                    <Element.Dropdown.Item href="#/action-3"><FormattedMessage id="Log Out"/></Element.Dropdown.Item>
                 </Element.Dropdown.Menu>
             </Element.Dropdown>
         </div>
