@@ -14,7 +14,6 @@ import Header from './components/Header/header';
 import Login from './components/SignIn/login/login';
 import PostProfile from "./components/PostProfile/PostProfile";
 import localeEnMessages from "./locales/en_profile";
-import { IntlProvider } from 'react-intl';
 import EstablishmentCardDetail from './components/EstablishmentList/EstablishmentCard/EstablishmentCardDetail';
 import localeEsMessages from "./locales/es_profile";
 import data from './MOCK_DATA.json';
@@ -24,7 +23,6 @@ import CreatePet from './components/CreatePet/createPet'
 
 var usrlang = navigator.language;
 
-let usrlang = navigator.language || navigator.userLanguage;
 function App() {
   return (
     <Element.Container className='main-container' >
