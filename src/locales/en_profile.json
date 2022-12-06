@@ -13,7 +13,22 @@
     "Events": "Events",
     "Search" : "Search",
     "TopEvents": "Top Events near you", 
-    "Footer": "Made with PetPlace. Copyright 2022 - All rights reserved"
-
-
+    "Footer": "Made with PetPlace. Copyright 2022 - All rights reserved",
+    "Incorrect": "¿Not the right account? Logout",
+    "CreateAcct": "Create account",
+    "AssignName": "Please assign a name",
+    "AssignMail": "Please assign an email",
+    "AssignPass": "Please assign a password",
+    "CreateUsr": "Create user",
+    "Logged": "You are already logged",
+    "AlreadyAcc": "Already have an account? Log In",
+    "Name": "Name",
+    "Mail": "E-mail",
+    "Password": "Password",
+    "PickACity": "Pick a city",
+    "Propietary": "Establishment owner?",
+    "Login": "Log In",
+    "ValidEmail": "Enter a valid e-mail",
+    "ValidPass": "Enter a password",
+    "CreateAcc": "Don't have an account? Sign In"
 }

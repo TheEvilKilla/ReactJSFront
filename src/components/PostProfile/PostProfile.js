@@ -10,9 +10,6 @@ import Col from "react-bootstrap/Col";
 import QuestionsList from '../QuestionsList/QuestionsList';
 
 function PostProfile() {
-
-
-
     const [profile, setProfiles] = useState([]);
     useEffect(() => {
         if (!navigator.onLine) {
@@ -31,9 +28,6 @@ function PostProfile() {
                 })
         }
     }, []);
-
-
-
 
     const [pets, setPets] = useState([]);
 

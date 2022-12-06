@@ -13,5 +13,22 @@
     "Events": "Cosas por hacer",
     "Search" : "Busqueda",
     "TopEvents": "Top eventos cercanos a ti", 
-    "Footer": "Hecho con PetPlace. Copyright 2022 - Todos los derechos reservados"
+    "Footer": "Hecho con PetPlace. Copyright 2022 - Todos los derechos reservados",
+    "Incorrect": "¿Es la cuenta incorrecta? Cierre sesión ",
+    "CreateAcct": "Crear una cuenta",
+    "AssignName": "Por favor asigne un nombre",
+    "AssignMail": "Por favor asigne un correo",
+    "AssignPass": "Por favor asigne una contraseña",
+    "CreateUsr": "Crear usuario",
+    "Logged": "Usted ya se encuentra loggeado",
+    "AlreadyAcc": "¿Ya tiene una cuenta? Iniciar sesión",
+    "Name": "Nombre",
+    "Mail": "Correo",
+    "Password": "Clave",
+    "PickACity": "Seleccione una ciudad",
+    "Propietary": "¿Es propietario de un establecimiento?",
+    "Login": "Ingresar",
+    "ValidEmail": "Ingrese un correo valido",
+    "ValidPass": "Ingrese la contraseña",
+    "CreateAcc": "¿No tiene una cuenta? Crear cuenta"
 }
