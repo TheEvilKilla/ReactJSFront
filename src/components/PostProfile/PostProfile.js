@@ -82,10 +82,16 @@ function PostProfile() {
                 <br></br>
                 <br></br>
                 <h1 scope="row"> <FormattedMessage id="MyPets" /></h1>
+                <Row style={{
+                    display: 'flex',
+
+                }}>
+
                 {pets.map(elem => {
                     return (
                         <PostPet name={elem.name} species={elem.species} image={elem.image} ></PostPet>)
                 })}
+                </Row>
             </div>
 
             <Element.Container className="mt-3">

@@ -11,10 +11,10 @@ import * as Element from 'react-bootstrap';
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <Element.Container >
+  <main >
 
   <App></App>
-  </Element.Container >
+  </main >
 
 
 );
