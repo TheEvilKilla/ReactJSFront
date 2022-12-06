@@ -21,17 +21,6 @@ function FrontPage() {
         </h1>
         <EventList></EventList>
       </Element.Container>
-      <Element.Container className="mt-3">
-        <h1 className='my-questions' style={{
-          paddingTop: '50px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          <FormattedMessage id = "MyQuestions"/>
-        </h1>
-        <QuestionsList ></QuestionsList>
-      </Element.Container>
     </Element.Container >
   );
 } export default FrontPage;
