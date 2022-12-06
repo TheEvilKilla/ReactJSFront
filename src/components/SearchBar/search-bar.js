@@ -26,8 +26,6 @@ function SearchBar({ placeholder, data }) {
         setInputValue('');
     }
 
-    const intl = useIntl();
-
     return (
         <div className='search-bar' style={{
             paddingTop: '45px',

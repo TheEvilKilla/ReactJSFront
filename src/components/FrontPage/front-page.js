@@ -19,18 +19,7 @@ function FrontPage() {
         }}>
           <FormattedMessage id="TopEvents" />
         </h1>
-        <EventList></EventList>
-      </Element.Container>
-      <Element.Container className="mt-3">
-        <h1 className='my-questions' style={{
-          paddingTop: '50px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-          <FormattedMessage id = "MyQuestions"/>
-        </h1>
-        <QuestionsList ></QuestionsList>
+        <EventList slice='true'></EventList>
       </Element.Container>
     </Element.Container >
   );

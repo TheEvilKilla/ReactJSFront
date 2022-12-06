@@ -9,10 +9,10 @@ import other from '../../assets/other.svg';
 import './nav-bar.css';
 
 function NavBar() {
-    const buttonsContent = [{ text: 'Restaurantes', icon: restaurant, href: '/establishments/restaurants' },
-    { text: 'Hoteles', icon: hotel, href: '/establishments/hotels'},
-    { text: 'Veterinarias', icon: vet, href: '/establishments/vets' },
-    { text: 'Cosas por hacer', icon: other, href: '/events' }];
+    const buttonsContent = [{ text: 'Restaurants', icon: restaurant, href: '/establishments/restaurants' },
+    { text: 'Hotels', icon: hotel, href: '/establishments/hotels'},
+    { text: 'Vets', icon: vet, href: '/establishments/vets' },
+    { text: 'Events', icon: other, href: '/events' }];
 
     return (
         <div className='nav-bar'>

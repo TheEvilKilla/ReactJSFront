@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import * as Element from 'react-bootstrap';
 import { Dropdown } from 'primereact/dropdown';
+import { FormattedMessage } from 'react-intl';
 import DefaultImg from '../../../assets/perfil.png';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
@@ -15,7 +16,7 @@ function CreateAccount() {
     const [password, setPassword] = useState('');
     const [hasRoles, setHasRoles] = useState(true);
     const [validated, setValidated] = useState(false);
-    
+
     const onCityChange = (e) => {
         setSelectedCity(e.value);
     }
@@ -54,13 +55,13 @@ function CreateAccount() {
                     display: 'flex',
                     justifyContent: 'center',
                     paddingTop: '10px'
-                }}>Usted ya se encuentra loggeado</h1>
+                }}><FormattedMessage id="Logged" /></h1>
                 <a href='/login' onClick={logout} style={{
                     display: 'flex',
                     justifyContent: 'center',
                     color: 'black',
                     fontWeight: '500',
-                }}>¿Es la cuenta incorrecta? Cierre sesión</a>
+                }}><FormattedMessage id="Incorrect" /></a>
             </div>
         );
     }
@@ -71,7 +72,7 @@ function CreateAccount() {
                 <h1 className='create-event-title' style={{
                     display: 'flex',
                     justifyContent: 'center'
-                }}>Crear una cuenta</h1>
+                }}><FormattedMessage id="CreateAcct" /></h1>
                 <Element.Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Element.Form.Group controlId='createAccountForm' className='user-form' style={{
                         paddingTop: '10px',
@@ -79,34 +80,56 @@ function CreateAccount() {
                     }}>
                         <div class='grid' className='grid5'>
                             <div class='grid-item' >
-                                <Element.Form.Control type='text' placeholder='Nombre' onChange={e => onNameChange(e.target.value)} required />
+                                <FormattedMessage id="Name">
+                                    {ph =>
+                                        <Element.Form.Control type='text' placeholder={ph} onChange={e => onNameChange(e.target.value)} required />
+                                    }
+                                </FormattedMessage>
                                 <Element.Form.Control.Feedback type="invalid">
-                                    Por favor asigne un nombre
+                                    <FormattedMessage id="AssignName" />
                                 </Element.Form.Control.Feedback>
                             </div>
                             <div class='grid-item'>
-                                <Element.Form.Control type='email' placeholder='Correo' onChange={e => onEmailChange(e.target.value)} required />
+                                <FormattedMessage id="Mail">
+                                    {ph =>
+                                        <Element.Form.Control type='email' placeholder={ph} onChange={e => onEmailChange(e.target.value)} required />
+                                    }
+                                </FormattedMessage>
                                 <Element.Form.Control.Feedback type="invalid">
-                                    Por favor asigne un correo
+                                    <FormattedMessage id="AssignMail" />
                                 </Element.Form.Control.Feedback>
                             </div>
                             <div class='grid-item' >
-                                <Element.Form.Control type='password' placeholder='Password' onChange={e => onPasswordChange(e.target.value)} required />
+                                <FormattedMessage id="Password">
+                                    {ph =>
+                                        <Element.Form.Control type='password' placeholder={ph} onChange={e => onPasswordChange(e.target.value)} required />
+                                    }
+                                </FormattedMessage>
                                 <Element.Form.Control.Feedback type="invalid">
-                                    Por favor asigne una contraseña
+                                    <FormattedMessage id="AssignPass" />
                                 </Element.Form.Control.Feedback>
                             </div>
                             <div class='grid-item' >
-                                <Dropdown className='login-city-form' value={selectedCity} options={cities} onChange={onCityChange} optionLabel="name" placeholder="Seleccione una ciudad" required />
+                            <FormattedMessage id="PickACity">
+                                    {ph =>
+                                        <Dropdown className='login-city-form' value={selectedCity} options={cities} onChange={onCityChange} optionLabel="name" placeholder={ph} required />
+                                    }
+                            </FormattedMessage>
+                                
                             </div>
                             <div class='grid-item' >
                                 <Element.Form>
-                                    <Element.Form.Check
+                                <FormattedMessage id="Propietary">
+                                    {ph =>
+                                        <Element.Form.Check
                                         type="switch"
                                         id="roles-switch"
-                                        label="¿Es propietario de un establecimiento?"
+                                        label={ph}
                                         onChange={onSwitch}
                                     />
+                                    }
+                            </FormattedMessage>
+                                   
                                 </Element.Form>
                             </div>
                         </div>
@@ -117,7 +140,7 @@ function CreateAccount() {
                         paddingBottom: '10px'
                     }}>
                         <Element.Button type="submit" className='create-account-submit'>
-                            Crear usuario
+                            <FormattedMessage id="CreateUsr" />
                         </Element.Button>
                     </div>
                 </Element.Form>
@@ -126,7 +149,7 @@ function CreateAccount() {
                     justifyContent: 'center',
                     color: 'black',
                     fontWeight: '500'
-                }}>¿Ya tiene una cuenta? Iniciar sesion</a>
+                }}><FormattedMessage id="AlreadyAcc" /></a>
             </div>
         );
     }

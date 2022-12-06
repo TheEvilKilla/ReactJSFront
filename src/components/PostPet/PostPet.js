@@ -9,7 +9,6 @@ import dog from "../../assets/perro.jpg"
 function PostPet({name, species, image}) {
   
   return (
-        <div className="PostPet">
             <Card style={{ width: "16rem" }}> 
               <Card.Body className="card">
                 <Card.Title>{name}</Card.Title>         
@@ -18,7 +17,6 @@ function PostPet({name, species, image}) {
               </Card.Body>
             </Card>
         
-          </div>
   );
 }
 
