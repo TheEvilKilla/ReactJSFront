@@ -22,7 +22,7 @@ function QuestionCard(props) {
       <Accordion>
         <Card className='cardQ'> 
           <Card.Body /*style={{ display: 'flex'}}*/>
-            <Card.Title>{props.question.user}</Card.Title>
+            <Card.Title>{props.question.user.name}</Card.Title>
             <Card.Subtitle style={{  fontSize: '16px' }}>
             <FormattedDate
             value={new Date(props.question.date)}
@@ -44,8 +44,9 @@ function QuestionCard(props) {
             </Accordion>  
             <br></br>
             <FormFloating>
-              <FormControl className = "responder" placeholder= {props.placeholder} style = {{height: "100px"}} ></FormControl>
-              <label for="floatingTextarea2"><FormattedMessage id = "answer"/></label>
+              <FormControl className = "form-control" placeholder= {props.placeholder} style = {{height: "100px"}} id = "floatingTextarea2" ></FormControl>
+              <label htmlFor="floatingTextarea2">
+              <FormattedMessage id = "answer"/></label>
             </FormFloating>
             <div className = "div-1">
               <Row>

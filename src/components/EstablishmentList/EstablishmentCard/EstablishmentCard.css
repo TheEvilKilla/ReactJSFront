@@ -1,0 +1,37 @@
+.EstablishmentCard {
+    background-color: #F3DBD6;
+  }
+
+.card{
+    background-color:white;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+}
+
+.card--image{
+    border-radius: 50%;
+}
+
+.establishment-card-detail{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: justify;
+}
+
+.establishment-card{
+    width: '85rem'; 
+    margin: "2rem 2rem 0rem 0rem";
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.event-card-allign{
+    padding-top: 2rem;
+}
+

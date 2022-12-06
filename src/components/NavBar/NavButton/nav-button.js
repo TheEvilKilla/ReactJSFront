@@ -47,7 +47,7 @@ function NavButton({ text, icon, href }) {
                             widht: '45px',
 
                         }}>
-                            <img className='nav-button-image' src={icon} style={{
+                            <img className='nav-button-image' src={icon} alt ="icono" style={{
                                 display: 'flex',
                                 justifyContent: 'center',
                                 maxWidth: '45px',

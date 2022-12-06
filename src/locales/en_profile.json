@@ -12,6 +12,8 @@
     "Vets" : "Vets",
     "Events": "Events",
     "Search" : "Search",
-    "TopEvents": "Top Events near you"
+    "TopEvents": "Top Events near you", 
+    "Footer": "Made with PetPlace. Copyright 2022 - All rights reserved"
+
 
 }

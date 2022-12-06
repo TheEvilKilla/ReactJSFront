@@ -38,7 +38,7 @@ function Header({ data }) {
             }}>
                 <div>
                     <a href='/'>
-                        <img src={HeaderLogo} style={{
+                        <img src={HeaderLogo} alt ="logo" style={{
                             width: '145px',
                             maxWidth: '145px',
 
