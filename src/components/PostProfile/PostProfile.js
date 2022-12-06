@@ -10,30 +10,23 @@ import Col from "react-bootstrap/Col";
 import QuestionsList from '../QuestionsList/QuestionsList';
 
 function PostProfile() {
-
-
-
     const [profile, setProfiles] = useState([]);
     useEffect(() => {
         if (!navigator.onLine) {
-            if (localStorage.getItem("user-complete") != null) {
-                setProfiles(localStorage.getItem("user-complete"));
+            if (localStorage.getItem("user-complete") !== null) {
+                setProfiles(Array.from(localStorage.getItem("user-complete")));
             }
         } else {
             const URL =
-                'http://localhost:3000/api/v1/users/' + localStorage.getItem('user');
+                `http://localhost:3000/api/v1/users/${localStorage.getItem('user')}`;
             fetch(URL)
                 .then((data) => data.json())
                 .then((data) => {
                     setProfiles(data);
-                    localStorage.setItem("user-complete", data);
-                    console.log("data " + data)
+                    localStorage.setItem("user-complete", JSON.stringify(data));
                 })
         }
     }, []);
-
-
-
 
     const [pets, setPets] = useState([]);
 
@@ -49,12 +42,10 @@ function PostProfile() {
                 .then((data) => data.json())
                 .then((data) => {
                     setPets(data.pets);
-                    localStorage.setItem("pets", data.pets);
-
+                    localStorage.setItem("pets", JSON.stringify(data.pets));
                 })
-
         }
-    }, []);
+    }, [pets]);
 
     return (
         <Element.Container className='main-container' >

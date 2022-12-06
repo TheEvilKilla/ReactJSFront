@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
-import {Routes, Route, useNavigate} from 'react-router-dom';
-import * as Element from 'react-bootstrap';
 import 'primeicons/primeicons.css';
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
-import 'primeicons/primeicons.css';
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import React, { useEffect, useState } from 'react';
+import * as Element from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
+import { useNavigate } from 'react-router-dom';
 import './login.scss';
 
 function Login() {
@@ -45,14 +45,14 @@ function Login() {
         }
 
         setValidated(true);
-        if (profile.length !== 0){
+        if (profile.length !== 0) {
             const perfil = profile[0].id;
             localStorage.setItem('user', perfil);
             localStorage.setItem('user-complete', profile[0]);
 
             navigate('/');
             window.location.reload();
-        }            
+        }
     };
 
     const logout = () => {
@@ -66,13 +66,13 @@ function Login() {
                     display: 'flex',
                     justifyContent: 'center',
                     paddingTop: '10px'
-                }}>Usted ya se encuentra loggeado</h1>
+                }}><FormattedMessage id="Logged" /></h1>
                 <a href='/login' onClick={logout} style={{
                     display: 'flex',
                     justifyContent: 'center',
                     color: 'black',
-                    fontWeight: '500',                    
-                }}>¿Es la cuenta incorrecta? Cierre sesión</a>
+                    fontWeight: '500',
+                }}><FormattedMessage id="Incorrect" /></a>
             </div>
         );
     }
@@ -82,7 +82,7 @@ function Login() {
                 <h1 className='create-event-title' style={{
                     display: 'flex',
                     justifyContent: 'center'
-                }}>Ingresar</h1>
+                }}><FormattedMessage id="Log In" /></h1>
                 <Element.Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Element.Form.Group controlId='loginForm' className='user-form' style={{
                         paddingTop: '10px',
@@ -90,15 +90,23 @@ function Login() {
                     }}>
                         <div class='grid'>
                             <div class='grid-item'>
-                                <Element.Form.Control type='email' placeholder='Correo' onChange={e => onEmailChange(e.target.value)} required />
+                                <FormattedMessage id="Mail">
+                                    {ph =>
+                                        <Element.Form.Control type='email' placeholder={ph} onChange={e => onEmailChange(e.target.value)} required />
+                                    }
+                                </FormattedMessage>
                                 <Element.Form.Control.Feedback type='invalid'>
-                                    Ingrese un correo valido
+                                    <FormattedMessage id="ValidEmail" />
                                 </Element.Form.Control.Feedback>
                             </div>
                             <div class='grid-item' >
-                                <Element.Form.Control type='password' placeholder='Password' onChange={e => onPasswordChange(e.target.value)} required />
+                                <FormattedMessage id="Password">
+                                    {ph =>
+                                        <Element.Form.Control type='password' placeholder={ph} onChange={e => onPasswordChange(e.target.value)} required />
+                                    }
+                                </FormattedMessage>
                                 <Element.Form.Control.Feedback type='invalid'>
-                                    Ingrese la contraseña
+                                    <FormattedMessage id="ValidPass" />
                                 </Element.Form.Control.Feedback>
                             </div>
                         </div>
@@ -118,7 +126,7 @@ function Login() {
                     justifyContent: 'center',
                     color: 'black',
                     fontWeight: '500'
-                }}>¿No tiene una cuenta? Crear cuenta</a>
+                }}><FormattedMessage id="CreateAcc" /></a>
             </div>
         );
     }
@@ -144,7 +152,7 @@ function Login() {
                 border: '4px solid #000'
 
             }}>
-                {localStorage.length == 0 ? notLogged() : logged()}
+                {localStorage.getItem('user') === null ? notLogged() : logged()}
             </Element.Card>
         </div>
     );

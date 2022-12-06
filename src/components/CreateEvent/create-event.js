@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react';
-import * as Element from 'react-bootstrap';
-import { MultiSelect } from 'primereact/multiselect';
-import WalkingPet from '../../assets/walkingPet.jpg';
+import 'primeicons/primeicons.css';
 import { Calendar } from 'primereact/calendar';
 import { Dropdown } from 'primereact/dropdown';
-import 'primeicons/primeicons.css';
-import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import { MultiSelect } from 'primereact/multiselect';
 import 'primereact/resources/primereact.css';
-import "primeicons/primeicons.css";
+import 'primereact/resources/themes/lara-light-indigo/theme.css';
+import React, { useState } from 'react';
+import * as Element from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
+import WalkingPet from '../../assets/walkingPet.jpg';
 import './create-event.scss';
 
 function CreateEvent() {
@@ -26,7 +26,7 @@ function CreateEvent() {
         console.log(e.target.files);
         setFile(URL.createObjectURL(e.target.files[0]));
     }
-        
+
     const countries = [
         { name: 'Australia' },
         { name: 'Brazil' },
@@ -72,7 +72,7 @@ function CreateEvent() {
         const length = selectedItems ? selectedItems.length : 0;
         return (
             <div className="py-2 px-3">
-                <b>{length}</b> elemento{length < 2 ? '' : 's'} seleccionado{length < 2 ? '' : 's'}.
+                <b>{length}</b> elemento{length < 2  ? '' : 's'} seleccionado{length < 2 ? '' : 's'}.
             </div>
         );
     }
@@ -84,7 +84,8 @@ function CreateEvent() {
     return (
         <div className='create-event-container' style={{
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            marginTop: '25px'
         }}>
             <Element.Card className='create-event-card' style={{
                 width: '894px',
@@ -99,7 +100,7 @@ function CreateEvent() {
                 <h1 className='create-event-title' style={{
                     display: 'flex',
                     justifyContent: 'center'
-                }}>Crear evento</h1>
+                }}> <FormattedMessage id="CreateEvnt" /></h1>
                 <Element.Row className='create-event-main-row' tyle={{
                     width: '100%'
                 }}>
@@ -115,7 +116,7 @@ function CreateEvent() {
                                 placement='bottom'
                                 overlay={
                                     <Element.Tooltip id={`tooltip-bottom`}>
-                                        Seleccione la imagen para su evento
+                                        <FormattedMessage id="EvntImg" />
                                     </Element.Tooltip>
                                 }>
                                 <div className='create-event-image-upload'
@@ -144,35 +145,55 @@ function CreateEvent() {
                             paddingTop: '15px',
                             paddingBottom: '10px'
                         }}>
-                            <Element.Form.Group className='event-name-form' controlId='formEventName'>
-                                <Element.Form.Control type='text' placeholder='Nombre del evento' style={{
-                                    width: '525px',
-                                    height: '42px'
-                                }} />
-                            </Element.Form.Group>
+                            <FormattedMessage id="NameEvent">
+                                {ph =>
+                                    <Element.Form.Group className='event-name-form' controlId='formEventName'>
+                                        <Element.Form.Control type='text' placeholder={ph} required style={{
+                                            width: '525px',
+                                            height: '42px'
+                                        }} />
+                                    </Element.Form.Group>
+                                }
+                            </FormattedMessage>
                         </Element.Row>
                         <div style={{
                             paddingBottom: '10px',
                             maxWidth: '525px'
                         }}>
-                            <Dropdown className='event-city-form' value={selectedCity} options={cities} onChange={onCityChange} optionLabel="name" placeholder="Seleccione una ciudad" />
+                            <FormattedMessage id="PickACity">
+                                {ph =>
+                                    <Dropdown className='event-city-form' value={selectedCity} options={cities} onChange={onCityChange} optionLabel="name" placeholder={ph} />
+                                }
+                            </FormattedMessage>
                         </div>
-                        <Calendar className='event-date-form' value={date} onChange={(e) => setDate(e.value)} showTime selectionMode="range" minDate={minDate}
-                            placeholder='Fecha y hora del evento' />
-                        <Element.Form.Group className='event-description-form' controlId="exampleForm.formEventDescription" style={{
-                            paddingBottom: '10px'
-                        }} >
-                            <Element.Form.Control as="textarea" rows="4" placeholder='Descripcion' style={{
-                                width: '525px',
-                                maxWidth: '525px',
-                            }} />
-                        </Element.Form.Group>
+                        <FormattedMessage id="H&Date">
+                            {ph =>
+                                <Calendar className='event-date-form' value={date} onChange={(e) => setDate(e.value)} showTime selectionMode="range" minDate={minDate}
+                                    placeholder={ph} />
+                            }
+                        </FormattedMessage>
+                        <FormattedMessage id="Description">
+                            {ph =>
+                                <Element.Form.Group className='event-description-form' controlId="exampleForm.formEventDescription" style={{
+                                    paddingBottom: '10px'
+                                }} >
+                                    <Element.Form.Control as="textarea" rows="4" placeholder={ph} style={{
+                                        width: '525px',
+                                        maxWidth: '525px',
+                                    }} />
+                                </Element.Form.Group>
+                            }
+                        </FormattedMessage>
                         <div style={{
                             paddingBottom: '15px'
                         }}>
-                            <MultiSelect className="event-multiselect" value={selectedEstablishments} options={countries} onChange={(e) => setSelectedEstablishments(e.value)}
-                                optionLabel="name" placeholder="Seleccione los establecimientos" filter itemTemplate={cityTemplate}
-                                selectedItemTemplate={selectedEstablishmentTemplate} panelFooterTemplate={panelFooterTemplate} />
+                            <FormattedMessage id="SelectEstablish">
+                                {ph =>
+                                    <MultiSelect className="event-multiselect" value={selectedEstablishments} options={countries} onChange={(e) => setSelectedEstablishments(e.value)}
+                                        optionLabel="name" placeholder={ph} filter itemTemplate={cityTemplate}
+                                        selectedItemTemplate={selectedEstablishmentTemplate} panelFooterTemplate={panelFooterTemplate} />
+                                }
+                            </FormattedMessage>
                         </div>
                     </Element.Col>
                 </Element.Row>

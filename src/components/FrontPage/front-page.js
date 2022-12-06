@@ -19,7 +19,7 @@ function FrontPage() {
         }}>
           <FormattedMessage id="TopEvents" />
         </h1>
-        <EventList></EventList>
+        <EventList slice='true'></EventList>
       </Element.Container>
     </Element.Container >
   );

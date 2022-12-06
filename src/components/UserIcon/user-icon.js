@@ -13,6 +13,7 @@ function UserIcon({ image, options }) {
         return (
             <Element.Dropdown.Menu>
                 <Element.Dropdown.Item href="/users"><FormattedMessage id="Profile" /></Element.Dropdown.Item>
+                <Element.Dropdown.Item href='/create-event'><FormattedMessage id="CreateEvnt" /></Element.Dropdown.Item>
                 <Element.Dropdown.Divider />
                 <Element.Dropdown.Item href='/' onClick={() => logout()}><FormattedMessage id="Log Out" /></Element.Dropdown.Item>
             </Element.Dropdown.Menu>

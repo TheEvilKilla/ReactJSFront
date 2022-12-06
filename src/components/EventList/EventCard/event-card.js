@@ -25,7 +25,7 @@ function EventCard({ image, name, city, date, description }) {
                             maxWidth: '252px',
                             maxHeight: '252px',
                         }}>
-                            <img className="event-card-image" src={image} style={{
+                            <img className="event-card-image" src={image} alt="Imagen del evento" style={{
                                 borderRadius: '20%',
                                 maxWidth: '252px',
                                 maxHeight: '252px',
