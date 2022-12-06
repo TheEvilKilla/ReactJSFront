@@ -44,7 +44,7 @@ function QuestionCard(props) {
             </Accordion>  
             <br></br>
             <FormFloating>
-              <FormControl className = "form-control" placeholder= {props.placeholder} style = {{height: "100px"}} id = "floatingTextarea2" ></FormControl>
+              <FormControl className = "form-controlg" placeholder= {props.placeholder} style = {{height: "100px"}} id = "floatingTextarea2" ></FormControl>
               <label htmlFor="floatingTextarea2">
               <FormattedMessage id = "answer"/></label>
             </FormFloating>
