@@ -12,5 +12,4 @@ El usuario puede crear una nueva cuenta y ver su perfil. También puede iniciar 
 
 Para poder ver las mascotas y las preguntas de un usuario, primero se debe poblar la base de datos desde postman. 
 
-La parte de PWA para usuario y mascotas está implementada, sin embargo, cuando se hace npm run build se crea un conflicto con el login, por lo cual no está funcionando. 
 
