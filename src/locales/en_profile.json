@@ -36,5 +36,7 @@
     "NameEvent": "Name of the event",
     "H&Date": "Date and hour of the event",
     "Description": "Description of the event",
-    "Select": "Select the establishments"
+    "Select": "Select the establishments",
+    "Review" : "Review"
+
 }
