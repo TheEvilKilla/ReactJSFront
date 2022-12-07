@@ -10,6 +10,7 @@ function QuestionsList(props) {
        const URL = "http://localhost:3000/api/v1/q&as";
        fetch(URL).then(data => data.json()).then(data => {
            setQuestions(data.filter(m=>(m.question === null && m.user.id === localStorage.getItem('user'))));
+           console.log(localStorage.getItem('user'));
        })
    }, []);
 
